@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>
+    Top restaurants
+  </h1>
+
+  <ol>
+    <% @restaurants.each do |restaurant| %>
+      <li>
+        <%= restaurant.name %>
+      </li>
+    <% end %>
+  </ol>
+</div>
