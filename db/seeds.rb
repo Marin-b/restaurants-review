@@ -16,6 +16,14 @@ Restaurant.destroy_all
     stars: rand(1..5),
     chef_name: Faker::Artist.name
   )
+
+  10.times do
+    Review.create(
+      content: Faker::Address.full_address,
+      restaurant: restaurant
+    )
+  end
+
   puts "Created restaurant with id: #{restaurant.id}"
 end
 

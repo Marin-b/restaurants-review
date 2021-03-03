@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  root 'restaurants#index'
+
   resources :restaurants do
+    resources :reviews, only: [:new, :create]
     collection do
       # get '/restaurants/top', to: 'restaurants#top', as: 'top_restaurants'
       get :top
@@ -9,6 +12,7 @@ Rails.application.routes.draw do
       get :chef
     end
   end
-  # /restaurants/top
+
+  resources :reviews, only: :destroy
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
